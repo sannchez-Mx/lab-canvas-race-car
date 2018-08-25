@@ -16,5 +16,4 @@ window.onload = function() {
         } 
     }
 
-    class
 };
