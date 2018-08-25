@@ -40,7 +40,6 @@ window.onload = function() {
         this.width = 60;
         this.height = 95;    
         this.speedX = 0;
-        this.speedY = 0;
         this.newPos = function(){
           this.x += this.speedX;
         }    
@@ -66,7 +65,7 @@ window.onload = function() {
           this.x = 0;
           this.y = 0;
           this.width = canvas.width;
-          this.height = 1000;
+          this.height = canvas.height;
           this.image = new Image();
           this.image.src = "./images/pista.png";
         }
@@ -80,12 +79,12 @@ window.onload = function() {
   
       draw(){
           this.y++;
-          if(this.y < -canvas.width) this.y = 0;
+          if(this.y < -canvas.height) this.y = 0;
           ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
           ctx.drawImage(this.image, this.x, this.y - this.height, this.width, this.height);
         }
-  
-  }
+      };
+
     var car = new Car();
     var highway = new Highway();
 
